@@ -5,8 +5,8 @@
     <title>Crush Mo Ba Ako?</title>
     <style>
         body {
-            background-color: #f0f8ff;
-            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ffafbd, #ffc3a0);
+            font-family: 'Arial', sans-serif;
             text-align: center;
             margin: 0;
             padding: 0;
@@ -17,46 +17,57 @@
             flex-direction: column;
         }
         .central-box {
-            border: 2px solid pink;
+            border: 2px solid #ff66b2;
+            border-radius: 15px;
             padding: 20px;
-            background-color: #fff;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
             width: 300px;
             text-align: center;
             position: relative;
+            backdrop-filter: blur(10px);
         }
         .button {
             margin: 10px;
-            padding: 10px 20px;
-            font-size: 16px;
+            padding: 15px 30px;
+            font-size: 18px;
             cursor: pointer;
-            border-radius: 5px;
+            border-radius: 25px;
             border: 2px solid;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: all 0.3s ease;
             position: relative;
+            outline: none;
         }
         .button-yes {
-            border-color: blue;
-            color: blue;
+            border-color: #4a90e2;
+            color: #4a90e2;
+            background: #eaf4fe;
         }
         .button-no {
-            border-color: red;
-            color: red;
+            border-color: #e94e77;
+            color: #e94e77;
+            background: #fef2f2;
         }
         .button-yes:hover {
-            background-color: blue;
+            background: #4a90e2;
             color: #fff;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
         }
         .button-no:hover {
-            background-color: red;
+            background: #e94e77;
             color: #fff;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
         }
         .credit {
             position: absolute;
             bottom: 10px;
             right: 10px;
-            font-size: 12px;
+            font-size: 14px;
             color: #888;
+            font-style: italic;
+        }
+        h2 {
+            color: #ff66b2;
         }
     </style>
 </head>
