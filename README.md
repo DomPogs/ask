@@ -1,2 +1,112 @@
-404
-File not found
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crush Mo Ba Ako?</title>
+    <style>
+        body {
+            background-color: #f0f8ff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .central-box {
+            border: 2px solid pink;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            position: relative;
+        }
+        .button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: 2px solid;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            position: relative;
+        }
+        .button-yes {
+            border-color: blue;
+            color: blue;
+        }
+        .button-no {
+            border-color: red;
+            color: red;
+        }
+        .button-yes:hover {
+            background-color: blue;
+            color: #fff;
+        }
+        .button-no:hover {
+            background-color: red;
+            color: #fff;
+        }
+        .credit {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 12px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="central-box">
+        <img id="crush-image" src="sweet.gif" alt="Crush Image" width="100%" height="auto">
+        <h2 id="message">Hi Crush mo ba ako?</h2>
+        <button class="button button-yes" onclick="yesClicked()">Yes</button>
+        <button class="button button-no" onmouseover="avoidClick()">No</button>
+    </div>
+
+    <div class="credit">Created by Dominique E</div>
+
+    <script>
+        // Paths to your images and music
+        const initialImage = 'sweet.gif';
+        const yesImage = 'love.gif';
+        const musicFile = 'Kilig1.mp3';
+
+        function yesClicked() {
+            const centralBox = document.querySelector('.central-box');
+            centralBox.innerHTML = `
+                <img id="crush-image" src="${yesImage}" alt="Crush Image" width="100%" height="auto">
+                <h2>Crush rin kita yiee</h2>
+            `;
+            playMusic();
+        }
+
+        function avoidClick() {
+            let buttonNo = document.querySelector('.button-no');
+            let moveX = Math.floor(Math.random() * 200) - 100; // Move within a range of -100 to +100 pixels
+            let moveY = Math.floor(Math.random() * 200) - 100; // Move within a range of -100 to +100 pixels
+            let currentLeft = buttonNo.offsetLeft + moveX;
+            let currentTop = buttonNo.offsetTop + moveY;
+
+            // Ensure the button stays within the window bounds
+            if (currentLeft < 0) currentLeft = 0;
+            if (currentTop < 0) currentTop = 0;
+            if (currentLeft + buttonNo.offsetWidth > window.innerWidth) currentLeft = window.innerWidth - buttonNo.offsetWidth;
+            if (currentTop + buttonNo.offsetHeight > window.innerHeight) currentTop = window.innerHeight - buttonNo.offsetHeight;
+
+            buttonNo.style.position = 'absolute';
+            buttonNo.style.left = currentLeft + 'px';
+            buttonNo.style.top = currentTop + 'px';
+        }
+
+        function playMusic() {
+            let audio = new Audio(musicFile);
+            audio.play();
+        }
+    </script>
+</body>
+</html>
