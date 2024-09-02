@@ -72,7 +72,7 @@
 
     <script>
         // Paths to your images and music
-        const initialImage = 'sweet.gif';
+        const initialImage = 'eweet.gif';
         const yesImage = 'love.gif';
         const musicFile = 'Kilig1.mp3';
 
